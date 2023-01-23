@@ -18,20 +18,15 @@
 |
 */
 
+//Dalam adonis , route dapat dipisah akan tetapi tetap mengimport route ke 2 pada route utama ini
 import Route from '@ioc:Adonis/Core/Route'
+import 'App/modules/welcome/welcomeRoute'
+import 'App/modules/home/homeRoute'
+
 
 Route.get('/', async ({ view }) => {
   return view.render('welcome')
 })
 
-Route.get('/hello', () => {
-  return  'Hello guys anak" semangat belajar'
-});
 
-Route.get('/welcome', () => {
-  return  'Welcome guys, mari kita belajar adonis nihh.'
-});
 
-Route.get('/welcome/:id', ({params}) => {
-  return  'Welcome guys, mari kita belajar adonis nihh. id anda : ' + params.id
-});
