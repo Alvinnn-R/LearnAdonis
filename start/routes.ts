@@ -23,10 +23,8 @@ import Route from '@ioc:Adonis/Core/Route'
 import 'App/modules/welcome/welcomeRoute'
 import 'App/modules/home/homeRoute'
 
-
-Route.get('/', async ({ view }) => {
-  return view.render('welcome')
-})
+//notes
+Route.resource('/note','NotesController');
 
 //Api CRUD
 Route.get("/post", "PostsController.showAll");
@@ -34,6 +32,8 @@ Route.get("/post/:id", "PostsController.show");
 Route.post("/post", "PostsController.create");
 Route.put("/post/:id", "PostsController.update");
 Route.delete("/post/:id", "PostsController.delete");
+
+
 
 
 
